@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app'
 import React from 'react'
+import getStyles from '@styles/global'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
+    getStyles()
     return <Component {...pageProps} />
 }
-
-export default MyApp

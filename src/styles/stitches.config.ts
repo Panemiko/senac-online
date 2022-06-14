@@ -1,4 +1,5 @@
 import { createStitches } from '@stitches/react'
+import colors from './colors'
 
 export const {
     config,
@@ -19,6 +20,7 @@ export const {
         xl: '(min-width: 1280px)',
     },
     theme: {
+        colors,
         space: {
             1: '.0625rem',
             2: '.125rem',

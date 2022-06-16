@@ -13,6 +13,6 @@ export default globalCss({
         },
     },
     'html,body': {
-        background: '$background1',
+        background: '$backgroundLight',
     },
 })

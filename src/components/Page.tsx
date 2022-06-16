@@ -13,7 +13,7 @@ export default function Page(props: PageProps) {
     return (
         <>
             <Head>
-                <title>{title}</title>
+                <title>{`${title} - Senac Online`}</title>
                 <meta name='description' content={description} />
             </Head>
             {children}

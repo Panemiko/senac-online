@@ -1,25 +1,21 @@
 import { styled } from '@styles/stitches.config'
 
 export default styled('h1', {
-    color: '$title',
-    fontWeight: '$medium',
+    fontWeight: '$normal',
 
     variants: {
         variant: {
             primary: {
-                fontSize: '$6',
+                fontSize: '$4',
+                color: '$title',
             },
             secondary: {
-                fontSize: '$5',
+                fontSize: '$3',
+                color: '$placeholder',
             },
             tertiary: {
-                fontSize: '$4',
-            },
-            quaternary: {
-                fontSize: '$3',
-            },
-            quinary: {
                 fontSize: '$2',
+                color: '$placeholder',
             },
         },
     },

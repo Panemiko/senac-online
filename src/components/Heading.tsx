@@ -11,11 +11,11 @@ export default styled('h1', {
             },
             secondary: {
                 fontSize: '$3',
-                color: '$placeholder',
+                color: '$support',
             },
             tertiary: {
                 fontSize: '$2',
-                color: '$placeholder',
+                color: '$support',
             },
         },
     },

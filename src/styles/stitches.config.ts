@@ -21,6 +21,12 @@ export const {
     },
     theme: {
         colors,
+        transitions: {
+            turtle: '1s',
+            slow: '.5s',
+            regular: '.2s',
+            fast: '.1s',
+        },
         space: {
             1: '.0625rem',
             2: '.125rem',

@@ -1,10 +1,12 @@
 import React from 'react'
+import { AiFillGithub as GithubIcon } from 'react-icons/ai'
 import { styled } from '@styles/stitches.config'
 import Page from '@components/Page'
 import Heading from '@components/Heading'
 import TextInput from '@components/TextInput'
 import Link from '@components/Link'
 import Button from '@components/Button'
+import Icon from '@components/Icon'
 
 const Container = styled('main', {
     height: '100vh',
@@ -47,7 +49,16 @@ export default function Register() {
                     />
                     <Link href='#'>Esqueceu sua senha?</Link>
                     <br />
-                    <Button css={{ marginTop: '$7' }}>Entrar</Button>
+                    <Button css={{ marginTop: '$7', marginBottom: '$8' }}>
+                        Entrar
+                    </Button>
+                    <br />
+                    <Icon
+                        target='_blank'
+                        href='https://github.com/panemiko/senac-online'
+                    >
+                        <GithubIcon />
+                    </Icon>
                 </FormContainer>
             </Container>
         </Page>

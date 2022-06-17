@@ -7,10 +7,10 @@ export default styled('input', {
     background: '$backgroundDark',
     borderBottom: '1px solid',
     borderBottomColor: '$backgroundDark',
-    color: '$text',
+    color: '$textMedium',
     outline: 'none',
-    borderRadius: '$3',
-    transition: '.2s',
+    borderRadius: '$5',
+    transition: '$regular',
 
     '&:focus': {
         borderBottomColor: '$accentDark',

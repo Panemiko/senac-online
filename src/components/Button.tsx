@@ -5,12 +5,12 @@ export default styled('button', {
     paddingX: '$7',
     border: 'none',
     borderRadius: '$3',
-    color: '$text',
+    color: '$textMedium',
     background: '$accentLight',
-    transition: '.2s',
+    transition: '$regular',
 
     '&:hover': {
-        color: '$title',
+        color: '$textLow',
         background: '$accentMedium',
         cursor: 'pointer',
     },

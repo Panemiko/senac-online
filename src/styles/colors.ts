@@ -38,9 +38,9 @@ export default {
     backgroundDark: '#DCDBDA',
     backgroundLow: '#B9B8B7',
 
-    title: '$grey900',
-    text: '$grey800',
-    support: '$grey700',
+    textLow: '$grey900',
+    textMedium: '$grey800',
+    textLight: '$grey700',
     placeholder: '$grey600',
     placeholderIcon: '$grey500',
 }

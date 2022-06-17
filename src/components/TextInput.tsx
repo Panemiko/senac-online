@@ -9,7 +9,7 @@ export default styled('input', {
     borderBottomColor: '$backgroundDark',
     color: '$textMedium',
     outline: 'none',
-    borderRadius: '$3',
+    borderRadius: '$5',
     transition: '$regular',
 
     '&:focus': {

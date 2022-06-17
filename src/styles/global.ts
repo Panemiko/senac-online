@@ -15,4 +15,10 @@ export default globalCss({
     'html,body': {
         background: '$backgroundLight',
     },
+    a: {
+        textDecoration: 'none',
+        '&:hover': {
+            textDecoration: 'underline',
+        },
+    },
 })

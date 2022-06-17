@@ -6,13 +6,19 @@ export default globalCss({
         margin: 0,
         boxSizing: 'border-box',
         fontFamily: '"Roboto", sans-serif',
-        color: '$main11',
+        color: '$text',
         '&::selection': {
-            color: '$main12',
-            background: '$primary5',
+            color: '$title',
+            background: '$accentLight',
         },
     },
     'html,body': {
-        background: '$main1',
+        background: '$backgroundLight',
+    },
+    a: {
+        textDecoration: 'none',
+        '&:hover': {
+            textDecoration: 'underline',
+        },
     },
 })

@@ -1,10 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
 import { AiFillGithub as GithubIcon } from 'react-icons/ai'
 import { styled } from '@styles/stitches.config'
 import Page from '@components/Page'
 import Heading from '@components/Heading'
 import TextInput from '@components/TextInput'
-import Link from '@components/Link'
+import ButtonLink from '@components/ButtonLink'
 import Button from '@components/Button'
 import Icon from '@components/Icon'
 
@@ -47,7 +48,9 @@ export default function Register() {
                         autoComplete='off'
                         placeholder='Senha'
                     />
-                    <Link href='#'>Esqueceu sua senha?</Link>
+                    <Link href='#'>
+                        <ButtonLink>Esqueceu sua senha?</ButtonLink>
+                    </Link>
                     <br />
                     <Button css={{ marginTop: '$7', marginBottom: '$8' }}>
                         Entrar

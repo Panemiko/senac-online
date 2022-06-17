@@ -7,15 +7,15 @@ export default styled('h1', {
         variant: {
             primary: {
                 fontSize: '$4',
-                color: '$title',
+                color: '$textLow',
             },
             secondary: {
                 fontSize: '$3',
-                color: '$support',
+                color: '$textLight',
             },
             tertiary: {
                 fontSize: '$2',
-                color: '$support',
+                color: '$textLight',
             },
         },
     },

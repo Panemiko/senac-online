@@ -2,12 +2,12 @@ import { styled } from '@styles/stitches.config'
 
 export default styled('a', {
     '& svg': {
-        fill: '$text',
-        transition: '.2s',
+        fill: '$textMedium',
+        transition: '$regular',
     },
 
     '&:hover svg': {
-        fill: '$title',
+        fill: '$textLow',
     },
 
     variants: {

@@ -7,8 +7,10 @@ export default styled('button', {
     borderRadius: '$3',
     color: '$text',
     background: '$accentLight',
+    transition: '.2s',
 
     '&:hover': {
+        color: '$title',
         background: '$accentMedium',
         cursor: 'pointer',
     },

@@ -1,1 +1,1 @@
-export * from './LoginController'
+export { default as LoginController } from './LoginController'

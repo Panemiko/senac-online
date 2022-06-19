@@ -20,6 +20,9 @@
         "incremental": true,
         "baseUrl": ".",
         "paths": {
+            "@api/*": [
+                "src/pages/api/*"
+            ],
             "@pages/*": [
                 "src/pages/*"
             ],

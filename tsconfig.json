@@ -19,12 +19,19 @@
         "jsx": "preserve",
         "incremental": true,
         "baseUrl": ".",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/@types"
+        ],
         "paths": {
             "@api/*": [
                 "src/pages/api/*"
             ],
             "@pages/*": [
                 "src/pages/*"
+            ],
+            "@prismaClient": [
+                "src/prisma/index.ts"
             ],
             "@styles/*": [
                 "src/styles/*"

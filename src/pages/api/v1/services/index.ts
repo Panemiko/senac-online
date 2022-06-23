@@ -1,1 +1,1 @@
-export { default as sanitizeUser } from './sanitizeUser'
+export { default as SanitizeUserService } from './SanitizeUserService'

@@ -7,6 +7,12 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+model Settings {
+    id            String @id @default(uuid())
+    refreshSecret String
+    accessSecret  String
+}
+
 model User {
     id           String         @id @default(uuid())
     email        String         @unique

@@ -10,18 +10,23 @@
         "lint": "next lint",
         "test": "jest",
         "prisma-studio": "prisma studio",
-        "prisma-migrate": "prisma migrate dev"
+        "prisma-migrate": "prisma migrate dev",
+        "prisma-generate": "prisma generate"
     },
     "dependencies": {
         "@prisma/client": "^3.15.2",
         "@stitches/react": "^1.2.8",
+        "bcrypt": "^5.0.1",
+        "jsonwebtoken": "^8.5.1",
         "next": "12.1.6",
         "react": "18.1.0",
         "react-dom": "18.1.0",
         "react-icons": "^4.4.0"
     },
     "devDependencies": {
+        "@types/bcrypt": "^5.0.0",
         "@types/jest": "^28.1.2",
+        "@types/jsonwebtoken": "^8.5.8",
         "@types/node": "17.0.42",
         "@types/react": "18.0.12",
         "@types/react-dom": "18.0.5",

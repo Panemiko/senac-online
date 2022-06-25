@@ -1,7 +1,9 @@
 export default class Result {
     static apiMessages = {
         INVALID_PARAMS: new Result(400, 'Invalid Parameters'),
-        USER_NOT_FOUND: new Result(401, 'User not found'),
+        INVALID_PASSWORD: new Result(401, 'Invalid password'),
+        SUCCESS: new Result(200, 'Success'),
+        CREATED: new Result(202, 'Created'),
     }
 
     constructor(

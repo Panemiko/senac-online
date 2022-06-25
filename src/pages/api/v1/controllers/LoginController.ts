@@ -11,7 +11,12 @@ export interface LoginRequestBody {
 
 export default class LoginController extends Controller {
     async execute(req: NextApiRequest, res: NextApiResponse<any>) {
-        if (req.method !== 'POST') return res.status(403).end()
+        if (req.method !== 'POST') {
+            return Controller.sendResult(
+                res,
+                await Result.getMessageByName('METHOD_NOT_ALLOWED')
+            )
+        }
 
         const { email, password } = req.body as LoginRequestBody
 

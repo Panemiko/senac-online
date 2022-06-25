@@ -1,10 +1,9 @@
-import type { FormEvent, FormEventHandler } from 'react'
+import type { FieldValues } from 'react-hook-form'
+import type { AxiosError } from 'axios'
 import React from 'react'
 import Link from 'next/link'
 import { AiFillGithub as GithubIcon } from 'react-icons/ai'
-import type { FieldValues } from 'react-hook-form'
 import { useForm } from 'react-hook-form'
-import { validateEmail, validatePassword } from '@api/v1/validators'
 import { styled } from '@styles/stitches.config'
 import Page from '@components/Page'
 import Heading from '@components/Heading'
@@ -30,6 +29,10 @@ const FormContainer = styled('form', {
     textAlign: 'center',
 })
 
+const FormStatus = styled('span', {
+    color: '$dangerLow',
+})
+
 interface FormData {
     email: string
     password: string
@@ -37,12 +40,32 @@ interface FormData {
 
 export default function Register() {
     const { register, handleSubmit } = useForm()
+    const [status, setStatus] = React.useState('')
     const api = useApi()
 
     async function login(data: FieldValues) {
         const formData = data as FormData
 
-        console.log(await api.post('/login', { ...data }))
+        api.post('/login', { ...formData })
+            .then((response) => {
+                setStatus('')
+                alert(`Logado como ${response.data.content.user.name}`)
+            })
+            .catch((err: AxiosError) => {
+                const response = err.response?.data as any
+
+                if (err.response?.status === 500)
+                    return setStatus(
+                        'Ocorreu um erro interno. Tente novamente mais tarde.'
+                    )
+
+                if (
+                    response.message === 'Invalid Parameters' ||
+                    response.message === 'Invalid password'
+                ) {
+                    setStatus('Senha incorreta')
+                }
+            })
     }
 
     return (
@@ -64,23 +87,28 @@ export default function Register() {
                         placeholder='E-mail'
                     />
                     <TextInput
-                        css={{ marginBottom: '$8' }}
+                        css={{ marginBottom: '$7' }}
                         type='password'
                         required
                         {...register('password')}
                         autoComplete='off'
                         placeholder='Senha'
                     />
+                    <FormStatus css={{ marginBottom: '$8', display: 'block' }}>
+                        {status}
+                    </FormStatus>
                     <Link href='#'>
-                        <ButtonLink>Esqueceu sua senha?</ButtonLink>
+                        <ButtonLink
+                            css={{ marginBottom: '$7', display: 'block' }}
+                        >
+                            Esqueceu sua senha?
+                        </ButtonLink>
                     </Link>
-                    <br />
-                    <p>{status}</p>
                     <Button
                         as={'input' as any}
                         type='submit'
                         value='Entrar'
-                        css={{ marginTop: '$7', marginBottom: '$8' }}
+                        css={{ marginBottom: '$8' }}
                     />
                     <br />
                     <Icon

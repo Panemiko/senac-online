@@ -9,7 +9,9 @@ export default class CreateRefreshTokenService extends Service {
         const settings = new Settings()
 
         const secret = await settings.getRefreshTokenSecret()
-        const token = jwt.sign(userId, secret || 'token', { expiresIn: '30d' })
+        const token = jwt.sign({ userId }, secret || 'token', {
+            expiresIn: '30d',
+        })
 
         return await refreshTokenRepository.registerRefreshToken(userId, token)
     }

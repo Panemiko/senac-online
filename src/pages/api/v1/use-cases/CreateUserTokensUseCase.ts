@@ -4,6 +4,7 @@ import {
     CompareEncryptedPasswordService,
     CreateAccessTokenService,
     CreateRefreshTokenService,
+    SanitizeUserService,
 } from '../services'
 
 export default class CreateUserTokensUseCase extends UseCase {
@@ -13,6 +14,7 @@ export default class CreateUserTokensUseCase extends UseCase {
             new CompareEncryptedPasswordService()
         const createAccessTokenService = new CreateAccessTokenService()
         const createRefreshTokenService = new CreateRefreshTokenService()
+        const sanitizedUserService = new SanitizeUserService()
 
         const user = await userRepository.getUserByEmail(email)
 
@@ -28,10 +30,11 @@ export default class CreateUserTokensUseCase extends UseCase {
 
         const accessToken = await createAccessTokenService.execute(user.id)
         const refreshToken = await createRefreshTokenService.execute(user.id)
+        const sanitizedUser = await sanitizedUserService.execute(user)
 
         return {
             messageId: 'CREATED',
-            content: { accessToken, refreshToken },
+            content: { accessToken, refreshToken, user: sanitizedUser },
         }
     }
 }

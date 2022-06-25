@@ -2,9 +2,9 @@ import UseCase from './UseCase'
 import { UserRepository } from '../repositories'
 import {
     CompareEncryptedPasswordService,
+    CreateAccessTokenService,
     CreateRefreshTokenService,
 } from '../services'
-import CreateAccessTokenService from '../services/CreateAccessTokenService'
 
 export default class CreateUserTokensUseCase extends UseCase {
     async execute(email: string, password: string) {

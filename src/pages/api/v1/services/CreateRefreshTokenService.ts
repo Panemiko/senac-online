@@ -13,6 +13,8 @@ export default class CreateRefreshTokenService extends Service {
             expiresIn: '30d',
         })
 
-        return await refreshTokenRepository.registerRefreshToken(userId, token)
+        await refreshTokenRepository.registerRefreshToken(userId, token)
+
+        return token
     }
 }

@@ -19,10 +19,14 @@ export default class UserRepository extends Repository {
     }
 
     async registerRefreshToken(userId: string, token: string) {
-        return prisma.refreshToken.create({
+        return await prisma.refreshToken.create({
             data: {
+                user: {
+                    connect: {
+                        id: userId,
+                    },
+                },
                 token,
-                userId,
             },
         })
     }

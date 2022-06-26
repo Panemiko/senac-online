@@ -5,7 +5,7 @@ export default class Result {
         INVALID_PASSWORD: new Result(401, 'Invalid password'),
         UNAUTHORIZED: new Result(401, 'Invalid token'),
         SUCCESS: new Result(200, 'Success'),
-        CREATED: new Result(202, 'Created'),
+        CREATED: new Result(201, 'Created'),
     }
 
     constructor(

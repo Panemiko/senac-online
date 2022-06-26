@@ -30,4 +30,10 @@ export default class UserRepository extends Repository {
             },
         })
     }
+
+    async deleteRefreshTokenById(id: string) {
+        return await prisma.refreshToken.delete({
+            where: { id },
+        })
+    }
 }
